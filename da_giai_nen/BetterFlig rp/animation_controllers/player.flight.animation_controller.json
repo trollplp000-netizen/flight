@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.better_flight.flight": {
+      "initial_state": "default",
+
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "gliding": "query.is_gliding"
+            }
+          ]
+        },
+
+        "gliding": {
+          "animations": [
+            "animation.better_flight.glide_idle"
+          ],
+
+          "transitions": [
+            {
+              "default": "!query.is_gliding"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

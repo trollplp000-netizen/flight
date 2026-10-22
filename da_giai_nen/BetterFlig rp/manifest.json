@@ -1,0 +1,17 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Better Flight v2.0",
+    "description": "Made by @BladeLow",
+    "uuid": "371d8d63-395e-407c-ac62-d5b53454d0ed",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 20, 0]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "9c8c20ff-d5df-46c7-b0b0-d51a9a8e29fc",
+      "version": [1, 0, 0]
+    }
+  ]
+}
