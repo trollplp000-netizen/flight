@@ -1,0 +1,26 @@
+name: Unzip File Automatically
+
+on:
+  push:
+    paths:
+      - '*.zip' # Chạy khi có file zip mới được đẩy lên
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Giải nén file ZIP
+        run: |
+          unzip data.zip -d ./da_giai_nen
+          rm data.zip # Xóa file zip gốc nếu muốn giải phóng dung lượng
+
+      - name: Commit và Push các file đã giải nén lên lại repo
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@://github.com"
+          git add .
+          git commit -m "Tự động giải nén file ZIP" || exit 0
+          git push
